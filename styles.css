@@ -1,0 +1,299 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Inter', 'Work sans', 'Source sans pro', 'DM sans';
+  font-weight: normal;
+  color: #555;
+  background-color: ivory
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  height: 3rem;
+  background-color: #555;
+  color: white;
+  z-index: 1;
+}
+
+#navigationbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  height: 100%;
+}
+
+nav a {
+  color: white;
+  z-index: 1;
+}
+
+nav a:hover {
+  color: lightslategrey;
+}
+
+.desktop .mobile {
+  align-items: center;
+}
+
+.mobile {
+  display: none;
+}
+
+main {
+  position: relative;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;  
+}
+
+#navigationbar div ul {
+  display: flex;
+
+}
+
+#navigationbar div ul li {
+  margin-left: 2rem;
+}
+
+.about-me .container, #contact-me .container, #contact .contact-links {
+  margin: 0.75rem 0 2rem 0;
+}
+
+.mobile-me {
+  display: none;
+}
+
+.about-me .container img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.about-me .container img:hover {
+  border: solid 0.5px #555;
+}
+
+@media only screen and (min-width: 1024px) {
+  .about-me .container {
+    display: flex;
+    max-width: 75%;
+  }
+
+  .about-me .container img {
+    margin-left: 3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .about-me .container {
+    display: block;
+    max-width: 95%;
+  }
+
+  .mobile-me {
+    display: block;
+  }
+
+  .desktop-me {
+    display: none;
+  }
+
+  .about-me .container img {
+    margin-bottom: 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.25rem;
+  }
+
+  #open-button {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .about-me .container {
+    max-width: 100%;
+  }
+
+  .mobile-me {
+    display: block;
+  }
+
+  .desktop-me {
+    display: none;
+  }
+
+  .about-me .container img {
+    margin-bottom: 1rem;
+  }
+
+  nav h1 {
+    font-size: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+  
+  #open-button {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #navigationbar {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  #navigationbar div ul li {
+    margin-left: 1rem;
+  }
+
+  .about-me .container {
+    max-width: 100%;
+  }
+
+  .mobile-me {
+    display: block
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: inline-block;
+  }
+
+  .desktop-me {
+    display: none;
+  }
+
+  nav h1 {
+    font-size: 1rem;
+  }
+
+  .about-me .container img {
+    margin-bottom: 1rem;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project .image-container img {
+    max-width: 100%;
+    max-width: auto;
+    overflow: hidden;
+  }
+  
+  #open-button {
+    display: none;
+  }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  font-size: 1.3rem;
+  top: 10%;
+  left: 10%;
+  right: 20%;
+  padding: 1rem;
+  background-color: #ccc;
+  border: 2px solid #333;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.popup-content {
+  text-align: left;
+}
+
+#close-button {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-bottom: 1rem;
+  vertical-align: middle;
+  background-color: #f44;
+  color: black;
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+#close-button:hover {
+  background-color: #f11;
+}
+
+#close-popup {
+  cursor: pointer;
+}
+
+#projects .container {
+  display: inline-flex;
+  margin: 0.75rem 0 2rem 0;
+}
+
+#projects .image-container, .contact-links {
+  margin: 0.75rem 2rem 0.75rem 0;
+  transition: transform 0.3 ease;
+}
+
+.project .image-container img {
+  width: 400px;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid black;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.02);
+}
+
+.project-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.project-description {
+  width: 400px;
+}
+
+#skills img, .contact-links .fi {
+  width: 3rem;
+  height: 3rem;
+  font-size: 3rem
+}
+
+.fi {
+  font-size: 1rem;
+}
+
+.icon-container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-container img, .contact-links .fi {
+  display: inline-flex;
+  margin-right: 2rem;
+}
+
